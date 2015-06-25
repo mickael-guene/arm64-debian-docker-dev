@@ -90,5 +90,5 @@ build_guest_script
 build_docker_file
 
 #build image
-sudo docker build -t mickaelguene/arm64-debian-dev:${VERSION} .
+docker build -t mickaelguene/arm64-debian-dev:${VERSION} .
 
