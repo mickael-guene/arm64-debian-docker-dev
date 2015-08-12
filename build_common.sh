@@ -56,7 +56,14 @@ apt-get update && apt-get upgrade -y && apt-get install -y --no-install-recommen
     cmake \
     gdb \
     strace \
-    vim
+    vim \
+    flex \
+    texinfo \
+    dejagnu \
+    less \
+    libgmp-dev libmpfr-dev libmpc-dev \
+    zip \
+    unzip
 apt-get clean
 EOF
 chmod +x ${TMPDIR}/build_guest.sh
