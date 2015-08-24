@@ -65,6 +65,14 @@ apt-get update && apt-get upgrade -y && apt-get install -y --no-install-recommen
     zip \
     unzip
 apt-get clean
+
+#increase timeout for dejagnu
+echo '' >> /usr/share/dejagnu/config/unix.exp
+echo '#Avoid timeout due to running under umeq' >> /usr/share/dejagnu/config/unix.exp
+echo 'set_board_info gcc,timeout 1800' >> /usr/share/dejagnu/config/unix.exp
+echo 'set_board_info g++,timeout 1800' >> /usr/share/dejagnu/config/unix.exp
+echo 'set_board_info sim,timeout 600' >> /usr/share/dejagnu/config/unix.exp
+
 EOF
 chmod +x ${TMPDIR}/build_guest.sh
 }
